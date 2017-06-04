@@ -4,3 +4,4 @@ Part of the UNREAL COURSE
 
 ## Lecture List
 * BT01 Lecture list and notes
+* BT02 Game Design Document (GDD)
