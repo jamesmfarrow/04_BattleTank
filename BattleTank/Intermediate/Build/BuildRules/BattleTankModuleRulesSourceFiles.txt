@@ -1,0 +1,3 @@
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\BattleTank.Build.cs
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank.Target.cs
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTankEditor.Target.cs
