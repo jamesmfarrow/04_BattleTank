@@ -166,6 +166,10 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 				OuterClass->ClassFlags |= 0x20900284;
 
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_CrossHairYLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairYLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairYLocation, ATankPlayerController), 0x0040000000000001);
+				UProperty* NewProp_CrossHairXLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairXLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairXLocation, ATankPlayerController), 0x0040000000000001);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				static TCppClassTypeInfo<TCppClassTypeTraits<ATankPlayerController> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -175,13 +179,18 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TankPlayerController.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("TankPlayerController.h"));
+				MetaData->SetValue(NewProp_CrossHairYLocation, TEXT("Category"), TEXT("TankPlayerController"));
+				MetaData->SetValue(NewProp_CrossHairYLocation, TEXT("ModuleRelativePath"), TEXT("TankPlayerController.h"));
+				MetaData->SetValue(NewProp_CrossHairXLocation, TEXT("Category"), TEXT("TankPlayerController"));
+				MetaData->SetValue(NewProp_CrossHairXLocation, TEXT("ModuleRelativePath"), TEXT("TankPlayerController.h"));
+				MetaData->SetValue(NewProp_CrossHairXLocation, TEXT("ToolTip"), TEXT("dot screen location"));
 #endif
 			}
 		}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATankPlayerController, 330329808);
+	IMPLEMENT_CLASS(ATankPlayerController, 1978240734);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATankPlayerController(Z_Construct_UClass_ATankPlayerController, &ATankPlayerController::StaticClass, TEXT("/Script/BattleTank"), TEXT("ATankPlayerController"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATankPlayerController);
 	UPackage* Z_Construct_UPackage__Script_BattleTank()
@@ -192,7 +201,7 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/BattleTank")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x8029441C;
+			Guid.A = 0x7F18EBCC;
 			Guid.B = 0x21A25B0A;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
