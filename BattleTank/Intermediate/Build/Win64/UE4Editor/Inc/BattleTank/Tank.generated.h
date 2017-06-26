@@ -8,13 +8,36 @@
 #include "ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UStaticMeshComponent;
 #ifdef BATTLETANK_Tank_generated_h
 #error "Tank.generated.h already included, missing '#pragma once' in Tank.h"
 #endif
 #define BATTLETANK_Tank_generated_h
 
-#define BattleTank_Source_BattleTank_Public_Tank_h_13_RPC_WRAPPERS
-#define BattleTank_Source_BattleTank_Public_Tank_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define BattleTank_Source_BattleTank_Public_Tank_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetBarrelReference) \
+	{ \
+		P_GET_OBJECT(UStaticMeshComponent,Z_Param_BarrelToSet); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->SetBarrelReference(Z_Param_BarrelToSet); \
+		P_NATIVE_END; \
+	}
+
+
+#define BattleTank_Source_BattleTank_Public_Tank_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetBarrelReference) \
+	{ \
+		P_GET_OBJECT(UStaticMeshComponent,Z_Param_BarrelToSet); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->SetBarrelReference(Z_Param_BarrelToSet); \
+		P_NATIVE_END; \
+	}
+
+
 #define BattleTank_Source_BattleTank_Public_Tank_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATank(); \
@@ -59,7 +82,10 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATank); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATank)
 
 
-#define BattleTank_Source_BattleTank_Public_Tank_h_13_PRIVATE_PROPERTY_OFFSET
+#define BattleTank_Source_BattleTank_Public_Tank_h_13_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__LaunchSpeed() { return STRUCT_OFFSET(ATank, LaunchSpeed); }
+
+
 #define BattleTank_Source_BattleTank_Public_Tank_h_10_PROLOG
 #define BattleTank_Source_BattleTank_Public_Tank_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
