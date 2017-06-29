@@ -1,8 +1,10 @@
-﻿  Creating makefile for hot reloading BattleTankEditor (modules to compile have changed)
-C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\BattleTank.Build.cs : warning : Module constructors should take a ReadOnlyTargetRules argument (rather than a TargetInfo argument) and pass it to the base class constructor from 4.15 onwards. Please update the method signature.
-C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank.Target.cs : warning : SetupBinaries() is deprecated in the 4.16 release. From the constructor in your .target.cs file, use ExtraModuleNames.Add("Foo") to add modules to your target, or set LaunchModuleName = "Foo" to override the name of the launch module for program targets.
-C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTankEditor.Target.cs : warning : SetupBinaries() is deprecated in the 4.16 release. From the constructor in your .target.cs file, use ExtraModuleNames.Add("Foo") to add modules to your target, or set LaunchModuleName = "Foo" to override the name of the launch module for program targets.
-  Compiling game modules for hot reload
-  Target is up to date
-  Deploying BattleTankEditor Win64 Development...
-  Total build time: 30.84 seconds (NoActionsToExecute executor: 0.01 seconds)
+﻿  Compiling game modules for hot reload
+  Performing 3 actions (2 in parallel)
+  TankPlayerController.cpp
+  [2/3] Link UE4Editor-BattleTank-6475.dll
+  [3/3] Link UE4Editor-BattleTank-8184.lib
+     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-6475.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-6475.exp
+     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-6475.suppressed.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-6475.suppressed.exp
+ERROR : UBT error : Failed to produce item: C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-8184.lib
+  Total build time: 5.15 seconds (Local executor: 0.00 seconds)
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(44,5): error MSB3075: The command ""C:\Program Files\Epic Games\UE_4.16\Engine\Build\BatchFiles\Build.bat" BattleTankEditor Win64 Development "C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\BattleTank.uproject" -waitmutex" exited with code 5. Please verify that you have sufficient rights to run this command.
