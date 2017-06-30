@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BATTLETANK_TankBarrel_generated_h
 
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_RPC_WRAPPERS
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_INCLASS_NO_PURE_DECLS \
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_RPC_WRAPPERS
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUTankBarrel(); \
 	friend BATTLETANK_API class UClass* Z_Construct_UClass_UTankBarrel(); \
@@ -25,7 +25,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_INCLASS \
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesUTankBarrel(); \
 	friend BATTLETANK_API class UClass* Z_Construct_UClass_UTankBarrel(); \
@@ -35,7 +35,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_STANDARD_CONSTRUCTORS \
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UTankBarrel(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UTankBarrel) \
@@ -48,7 +48,7 @@ private: \
 public:
 
 
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_ENHANCED_CONSTRUCTORS \
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UTankBarrel(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -61,31 +61,31 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTankBarrel); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UTankBarrel)
 
 
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_PRIVATE_PROPERTY_OFFSET \
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__MaxDegreesPerSecond() { return STRUCT_OFFSET(UTankBarrel, MaxDegreesPerSecond); } \
 	FORCEINLINE static uint32 __PPO__MinElevationDegrees() { return STRUCT_OFFSET(UTankBarrel, MinElevationDegrees); } \
 	FORCEINLINE static uint32 __PPO__MaxElevationDegrees() { return STRUCT_OFFSET(UTankBarrel, MaxElevationDegrees); }
 
 
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_12_PROLOG
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_GENERATED_BODY_LEGACY \
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_11_PROLOG
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_PRIVATE_PROPERTY_OFFSET \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_RPC_WRAPPERS \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_INCLASS \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_STANDARD_CONSTRUCTORS \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_PRIVATE_PROPERTY_OFFSET \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_RPC_WRAPPERS \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_INCLASS \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define BattleTank_Source_BattleTank_Public_TankBarrel_h_15_GENERATED_BODY \
+#define BattleTank_Source_BattleTank_Public_TankBarrel_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_PRIVATE_PROPERTY_OFFSET \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_INCLASS_NO_PURE_DECLS \
-	BattleTank_Source_BattleTank_Public_TankBarrel_h_15_ENHANCED_CONSTRUCTORS \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_PRIVATE_PROPERTY_OFFSET \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_INCLASS_NO_PURE_DECLS \
+	BattleTank_Source_BattleTank_Public_TankBarrel_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
