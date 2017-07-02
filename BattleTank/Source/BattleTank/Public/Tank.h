@@ -5,8 +5,10 @@
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h" // put new includes above this
 
+class UTankTurret; // forward declaration
 class UTankBarrel; // forward declaration
 class UTankAimingComponent; // forward declaration
+
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -18,6 +20,9 @@ public:
 
 	UFUNCTION(Blueprintcallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+
+	UFUNCTION(Blueprintcallable, Category = Setup)
+	void SetTurretReference(UTankTurret* TurretToSet);
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;

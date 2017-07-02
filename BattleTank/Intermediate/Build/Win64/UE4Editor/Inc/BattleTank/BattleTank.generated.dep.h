@@ -23,3 +23,6 @@
 #ifndef BATTLETANK_TankPlayerController_generated_h
 	#include "TankPlayerController.h"
 #endif
+#ifndef BATTLETANK_TankTurret_generated_h
+	#include "Public/TankTurret.h"
+#endif

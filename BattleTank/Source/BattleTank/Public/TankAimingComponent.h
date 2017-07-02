@@ -8,9 +8,10 @@
 
 // forward declaration
 class UTankBarrel;
+class UTankTurret;
 
 //Holds barrels properties and elevate method
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class BATTLETANK_API UTankAimingComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -20,8 +21,10 @@ public:
 	UTankAimingComponent();
 
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
+	void SetTurretReference(UTankTurret* TurretToSet);
 
-	void AimAt(FVector OutHitLocation, float LaunchSpeed);
+	void BarrelAimAt(FVector OutHitLocation, float LaunchSpeed);
+	void TurretAimAt(FVector OutHitLocation, float LaunchSpeed);
 
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -32,7 +35,8 @@ protected:
 
 private:
 	UTankBarrel* Barrel = nullptr;
+	UTankTurret* Turret = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
-
+	void MoveTurretTowards(FVector AimDirection);
 };
