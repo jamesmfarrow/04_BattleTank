@@ -62,9 +62,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTankTurret); \
 
 
 #define BattleTank_Source_BattleTank_Public_TankTurret_h_15_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__MaxRotationDegreesPerSecond() { return STRUCT_OFFSET(UTankTurret, MaxRotationDegreesPerSecond); } \
-	FORCEINLINE static uint32 __PPO__MaxClockWiseRotationDegrees() { return STRUCT_OFFSET(UTankTurret, MaxClockWiseRotationDegrees); } \
-	FORCEINLINE static uint32 __PPO__MaxCounterClockWiseRotationDegrees() { return STRUCT_OFFSET(UTankTurret, MaxCounterClockWiseRotationDegrees); }
+	FORCEINLINE static uint32 __PPO__MaxRotationDegreesPerSecond() { return STRUCT_OFFSET(UTankTurret, MaxRotationDegreesPerSecond); }
 
 
 #define BattleTank_Source_BattleTank_Public_TankTurret_h_12_PROLOG

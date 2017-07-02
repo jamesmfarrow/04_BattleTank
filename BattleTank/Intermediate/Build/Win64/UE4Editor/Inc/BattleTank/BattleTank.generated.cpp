@@ -380,8 +380,6 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_MaxCounterClockWiseRotationDegrees = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxCounterClockWiseRotationDegrees"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxCounterClockWiseRotationDegrees, UTankTurret), 0x0040000000000001);
-				UProperty* NewProp_MaxClockWiseRotationDegrees = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxClockWiseRotationDegrees"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxClockWiseRotationDegrees, UTankTurret), 0x0040000000000001);
 				UProperty* NewProp_MaxRotationDegreesPerSecond = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxRotationDegreesPerSecond"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxRotationDegreesPerSecond, UTankTurret), 0x0040000000000001);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				static TCppClassTypeInfo<TCppClassTypeTraits<UTankTurret> > StaticCppClassTypeInfo;
@@ -393,10 +391,6 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Object Activation Components|Activation Trigger"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TankTurret.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/TankTurret.h"));
-				MetaData->SetValue(NewProp_MaxCounterClockWiseRotationDegrees, TEXT("Category"), TEXT("Setup"));
-				MetaData->SetValue(NewProp_MaxCounterClockWiseRotationDegrees, TEXT("ModuleRelativePath"), TEXT("Public/TankTurret.h"));
-				MetaData->SetValue(NewProp_MaxClockWiseRotationDegrees, TEXT("Category"), TEXT("Setup"));
-				MetaData->SetValue(NewProp_MaxClockWiseRotationDegrees, TEXT("ModuleRelativePath"), TEXT("Public/TankTurret.h"));
 				MetaData->SetValue(NewProp_MaxRotationDegreesPerSecond, TEXT("Category"), TEXT("Setup"));
 				MetaData->SetValue(NewProp_MaxRotationDegreesPerSecond, TEXT("ModuleRelativePath"), TEXT("Public/TankTurret.h"));
 #endif
@@ -405,7 +399,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankTurret, 2406130372);
+	IMPLEMENT_CLASS(UTankTurret, 2187598126);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankTurret(Z_Construct_UClass_UTankTurret, &UTankTurret::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankTurret"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankTurret);
 	UPackage* Z_Construct_UPackage__Script_BattleTank()
@@ -416,7 +410,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/BattleTank")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x2B0172AB;
+			Guid.A = 0xB0915093;
 			Guid.B = 0x9000372B;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

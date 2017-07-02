@@ -5,14 +5,11 @@
 
 void UTankTurret::Rotate(float RelativeSpeed)
 {
-	// Move the turret the right amount this frame
-	//Given a max rotation speed, and the frame time
 	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -1.f, +1.f);
 	auto RotationChange = RelativeSpeed * MaxRotationDegreesPerSecond * GetWorld()->DeltaTimeSeconds;
-	auto RawNewRotation = RelativeRotation.Yaw + RotationChange;
-	//auto Rotation = FMath::Clamp<float>(RawNewRotation, MaxClockWiseRotationDegrees, MaxCounterClockWiseRotationDegrees);
+	auto Rotation = RelativeRotation.Yaw + RotationChange;
 
-	SetRelativeRotation(FRotator(0, RawNewRotation, 0));
+	SetRelativeRotation(FRotator(0, Rotation, 0));
 }
 
 

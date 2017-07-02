@@ -23,8 +23,7 @@ public:
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
 	void SetTurretReference(UTankTurret* TurretToSet);
 
-	void BarrelAimAt(FVector OutHitLocation, float LaunchSpeed);
-	void TurretAimAt(FVector OutHitLocation, float LaunchSpeed);
+	void AimAt(FVector OutHitLocation, float LaunchSpeed);
 
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -38,5 +37,4 @@ private:
 	UTankTurret* Turret = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
-	void MoveTurretTowards(FVector AimDirection);
 };
