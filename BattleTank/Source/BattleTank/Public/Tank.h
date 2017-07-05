@@ -8,6 +8,7 @@
 class UTankTurret; // forward declaration
 class UTankBarrel; // forward declaration
 class UTankAimingComponent; // forward declaration
+class AProjectile;
 
 
 UCLASS()
@@ -42,5 +43,12 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Firing)
 	float LaunchSpeed = 4000; // TODO find sensible default
+
+	UPROPERTY(EditAnywhere, Category = Setup)
+	//UClass* ProjectileBluePrint;
+	TSubclassOf<AProjectile> ProjectileBluePrint;
+
+	// local barrel reference for spawning projectile
+	UTankBarrel* Barrel = nullptr;
 
 };

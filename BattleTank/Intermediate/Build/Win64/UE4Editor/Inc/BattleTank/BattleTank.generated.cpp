@@ -215,6 +215,7 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 				OuterClass->LinkChild(Z_Construct_UFunction_ATank_SetTurretReference());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_ProjectileBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileBluePrint"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(ProjectileBluePrint, ATank), 0x0044000000000001, Z_Construct_UClass_AProjectile_NoRegister(), UClass::StaticClass());
 				UProperty* NewProp_LaunchSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LaunchSpeed"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(LaunchSpeed, ATank), 0x0040000000000001);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ATank_Fire(), "Fire"); // 849603197
@@ -228,7 +229,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Tank.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
-				MetaData->SetValue(OuterClass, TEXT("ToolTip"), TEXT("forward declaration"));
+				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("Category"), TEXT("Setup"));
+				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
+				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("ToolTip"), TEXT("TODO find sensible default\nUClass* ProjectileBluePrint;"));
 				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("Category"), TEXT("Firing"));
 				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
 #endif
@@ -237,7 +240,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATank, 3287205745);
+	IMPLEMENT_CLASS(ATank, 3663041986);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATank(Z_Construct_UClass_ATank, &ATank::StaticClass, TEXT("/Script/BattleTank"), TEXT("ATank"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATank);
 	void ATankAIController::StaticRegisterNativesATankAIController()
@@ -350,7 +353,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("BlueprintSpawnableComponent"), TEXT(""));
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Object Activation Components|Activation Trigger"));
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Object Activation Components|Activation Trigger"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TankBarrel.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/TankBarrel.h"));
 				MetaData->SetValue(NewProp_MaxElevationDegrees, TEXT("Category"), TEXT("Setup"));
@@ -365,7 +368,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankBarrel, 3871682650);
+	IMPLEMENT_CLASS(UTankBarrel, 532250170);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankBarrel(Z_Construct_UClass_UTankBarrel, &UTankBarrel::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankBarrel"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankBarrel);
 	void ATankPlayerController::StaticRegisterNativesATankPlayerController()
@@ -449,7 +452,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("BlueprintSpawnableComponent"), TEXT(""));
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Object Activation Components|Activation Trigger"));
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Object Activation Components|Activation Trigger"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TankTurret.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/TankTurret.h"));
 				MetaData->SetValue(NewProp_MaxRotationDegreesPerSecond, TEXT("Category"), TEXT("Setup"));
@@ -460,7 +463,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankTurret, 2187598126);
+	IMPLEMENT_CLASS(UTankTurret, 1287988950);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankTurret(Z_Construct_UClass_UTankTurret, &UTankTurret::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankTurret"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankTurret);
 	UPackage* Z_Construct_UPackage__Script_BattleTank()
@@ -471,7 +474,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/BattleTank")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xFDEE9958;
+			Guid.A = 0x9D00B213;
 			Guid.B = 0xEB600602;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
