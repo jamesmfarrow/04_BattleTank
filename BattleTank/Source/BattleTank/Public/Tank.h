@@ -16,7 +16,10 @@ class BATTLETANK_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-	void AimAt(FVector OutHitLocation);
+	void AimAt(FVector OutHitLocation); 
+	
+	UFUNCTION(Blueprintcallable, Category = Firing)
+	void Fire();
 
 	UFUNCTION(Blueprintcallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
@@ -39,5 +42,5 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Firing)
 	float LaunchSpeed = 4000; // TODO find sensible default
-	
+
 };

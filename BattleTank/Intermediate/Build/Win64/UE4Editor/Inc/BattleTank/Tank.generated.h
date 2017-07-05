@@ -33,6 +33,14 @@ class UTankBarrel;
 		P_NATIVE_BEGIN; \
 		this->SetBarrelReference(Z_Param_BarrelToSet); \
 		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execFire) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Fire(); \
+		P_NATIVE_END; \
 	}
 
 
@@ -53,6 +61,14 @@ class UTankBarrel;
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		this->SetBarrelReference(Z_Param_BarrelToSet); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execFire) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Fire(); \
 		P_NATIVE_END; \
 	}
 

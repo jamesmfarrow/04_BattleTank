@@ -28,6 +28,7 @@ void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
 	Turret = TurretToSet;
 }
 
+
 // Called when the game starts
 void UTankAimingComponent::BeginPlay()
 {
@@ -69,8 +70,8 @@ void UTankAimingComponent::AimAt(FVector OutHitLocation, float LaunchSpeed)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrelTowards(AimDirection);
-		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f :Barrel Aim solution found"), Time );
+		//auto Time = GetWorld()->GetTimeSeconds();
+		//UE_LOG(LogTemp, Warning, TEXT("%f :Barrel Aim solution found"), Time );
 		
 	}
 	else
