@@ -18,6 +18,7 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameModeBase();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	AIMODULE_API class UClass* Z_Construct_UClass_AAIController();
 	ENGINE_API class UClass* Z_Construct_UClass_UActorComponent();
@@ -28,6 +29,8 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 	BATTLETANK_API class UClass* Z_Construct_UClass_ABattleTankGameModeBase();
 	BATTLETANK_API class UClass* Z_Construct_UClass_AProjectile_NoRegister();
 	BATTLETANK_API class UClass* Z_Construct_UClass_AProjectile();
+	BATTLETANK_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_BP_NoRegister();
+	BATTLETANK_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_BP();
 	BATTLETANK_API class UFunction* Z_Construct_UFunction_ATank_Fire();
 	BATTLETANK_API class UFunction* Z_Construct_UFunction_ATank_SetBarrelReference();
 	BATTLETANK_API class UFunction* Z_Construct_UFunction_ATank_SetTurretReference();
@@ -120,6 +123,43 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 	IMPLEMENT_CLASS(AProjectile, 2602017106);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AProjectile(Z_Construct_UClass_AProjectile, &AProjectile::StaticClass, TEXT("/Script/BattleTank"), TEXT("AProjectile"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AProjectile);
+	void UProjectileMovementComponent_BP::StaticRegisterNativesUProjectileMovementComponent_BP()
+	{
+	}
+	UClass* Z_Construct_UClass_UProjectileMovementComponent_BP_NoRegister()
+	{
+		return UProjectileMovementComponent_BP::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UProjectileMovementComponent_BP()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UProjectileMovementComponent();
+			Z_Construct_UPackage__Script_BattleTank();
+			OuterClass = UProjectileMovementComponent_BP::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20B00080;
+
+
+				static TCppClassTypeInfo<TCppClassTypeTraits<UProjectileMovementComponent_BP> > StaticCppClassTypeInfo;
+				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ProjectileMovementComponent_BP.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/ProjectileMovementComponent_BP.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	IMPLEMENT_CLASS(UProjectileMovementComponent_BP, 4038299849);
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UProjectileMovementComponent_BP(Z_Construct_UClass_UProjectileMovementComponent_BP, &UProjectileMovementComponent_BP::StaticClass, TEXT("/Script/BattleTank"), TEXT("UProjectileMovementComponent_BP"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UProjectileMovementComponent_BP);
 	void ATank::StaticRegisterNativesATank()
 	{
 		UClass* Class = ATank::StaticClass();
@@ -474,8 +514,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/BattleTank")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x9D00B213;
-			Guid.B = 0xEB600602;
+			Guid.A = 0x30F18649;
+			Guid.B = 0x6EFDC8BA;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

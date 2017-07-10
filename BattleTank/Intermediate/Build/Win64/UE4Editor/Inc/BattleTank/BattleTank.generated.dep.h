@@ -11,6 +11,9 @@
 #ifndef BATTLETANK_Projectile_generated_h
 	#include "Public/Projectile.h"
 #endif
+#ifndef BATTLETANK_ProjectileMovementComponent_BP_generated_h
+	#include "Public/ProjectileMovementComponent_BP.h"
+#endif
 #ifndef BATTLETANK_Tank_generated_h
 	#include "Public/Tank.h"
 #endif
