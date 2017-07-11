@@ -255,8 +255,9 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 				OuterClass->LinkChild(Z_Construct_UFunction_ATank_SetTurretReference());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_ProjectileBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileBluePrint"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(ProjectileBluePrint, ATank), 0x0044000000000001, Z_Construct_UClass_AProjectile_NoRegister(), UClass::StaticClass());
-				UProperty* NewProp_LaunchSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LaunchSpeed"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(LaunchSpeed, ATank), 0x0040000000000001);
+				UProperty* NewProp_ReloadTimeInSeconds = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ReloadTimeInSeconds"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ReloadTimeInSeconds, ATank), 0x0040000000010001);
+				UProperty* NewProp_LaunchSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LaunchSpeed"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(LaunchSpeed, ATank), 0x0040000000010001);
+				UProperty* NewProp_ProjectileBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileBluePrint"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(ProjectileBluePrint, ATank), 0x0044000000010001, Z_Construct_UClass_AProjectile_NoRegister(), UClass::StaticClass());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ATank_Fire(), "Fire"); // 849603197
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ATank_SetBarrelReference(), "SetBarrelReference"); // 2570909085
@@ -269,18 +270,20 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Tank.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
-				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("Category"), TEXT("Setup"));
-				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
-				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("ToolTip"), TEXT("TODO find sensible default\nUClass* ProjectileBluePrint;"));
+				MetaData->SetValue(NewProp_ReloadTimeInSeconds, TEXT("Category"), TEXT("Firing"));
+				MetaData->SetValue(NewProp_ReloadTimeInSeconds, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
+				MetaData->SetValue(NewProp_ReloadTimeInSeconds, TEXT("ToolTip"), TEXT("TODO find sensible default"));
 				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("Category"), TEXT("Firing"));
 				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
+				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("Category"), TEXT("Setup"));
+				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
 #endif
 			}
 		}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATank, 3663041986);
+	IMPLEMENT_CLASS(ATank, 927580474);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATank(Z_Construct_UClass_ATank, &ATank::StaticClass, TEXT("/Script/BattleTank"), TEXT("ATank"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATank);
 	void ATankAIController::StaticRegisterNativesATankAIController()
@@ -383,9 +386,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_MaxElevationDegrees = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxElevationDegrees"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxElevationDegrees, UTankBarrel), 0x0040000000000001);
-				UProperty* NewProp_MinElevationDegrees = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MinElevationDegrees"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MinElevationDegrees, UTankBarrel), 0x0040000000000001);
-				UProperty* NewProp_MaxDegreesPerSecond = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxDegreesPerSecond"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxDegreesPerSecond, UTankBarrel), 0x0040000000000001);
+				UProperty* NewProp_MaxElevationDegrees = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxElevationDegrees"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxElevationDegrees, UTankBarrel), 0x0040000000010001);
+				UProperty* NewProp_MinElevationDegrees = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MinElevationDegrees"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MinElevationDegrees, UTankBarrel), 0x0040000000010001);
+				UProperty* NewProp_MaxDegreesPerSecond = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxDegreesPerSecond"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxDegreesPerSecond, UTankBarrel), 0x0040000000010001);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				static TCppClassTypeInfo<TCppClassTypeTraits<UTankBarrel> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -408,7 +411,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankBarrel, 532250170);
+	IMPLEMENT_CLASS(UTankBarrel, 3336770368);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankBarrel(Z_Construct_UClass_UTankBarrel, &UTankBarrel::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankBarrel"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankBarrel);
 	void ATankPlayerController::StaticRegisterNativesATankPlayerController()
@@ -433,9 +436,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_LineTraceRange = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LineTraceRange"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(LineTraceRange, ATankPlayerController), 0x0040000000000001);
-				UProperty* NewProp_CrossHairYLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairYLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairYLocation, ATankPlayerController), 0x0040000000000001);
-				UProperty* NewProp_CrossHairXLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairXLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairXLocation, ATankPlayerController), 0x0040000000000001);
+				UProperty* NewProp_LineTraceRange = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LineTraceRange"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(LineTraceRange, ATankPlayerController), 0x0040000000010001);
+				UProperty* NewProp_CrossHairYLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairYLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairYLocation, ATankPlayerController), 0x0040000000010001);
+				UProperty* NewProp_CrossHairXLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairXLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairXLocation, ATankPlayerController), 0x0040000000010001);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				static TCppClassTypeInfo<TCppClassTypeTraits<ATankPlayerController> > StaticCppClassTypeInfo;
@@ -459,7 +462,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATankPlayerController, 2380141074);
+	IMPLEMENT_CLASS(ATankPlayerController, 1900194237);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATankPlayerController(Z_Construct_UClass_ATankPlayerController, &ATankPlayerController::StaticClass, TEXT("/Script/BattleTank"), TEXT("ATankPlayerController"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATankPlayerController);
 	void UTankTurret::StaticRegisterNativesUTankTurret()
@@ -484,7 +487,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-				UProperty* NewProp_MaxRotationDegreesPerSecond = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxRotationDegreesPerSecond"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxRotationDegreesPerSecond, UTankTurret), 0x0040000000000001);
+				UProperty* NewProp_MaxRotationDegreesPerSecond = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("MaxRotationDegreesPerSecond"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(MaxRotationDegreesPerSecond, UTankTurret), 0x0040000000010001);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				static TCppClassTypeInfo<TCppClassTypeTraits<UTankTurret> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -503,7 +506,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankTurret, 1287988950);
+	IMPLEMENT_CLASS(UTankTurret, 4243727479);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankTurret(Z_Construct_UClass_UTankTurret, &UTankTurret::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankTurret"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankTurret);
 	UPackage* Z_Construct_UPackage__Script_BattleTank()
@@ -514,7 +517,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/BattleTank")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x30F18649;
+			Guid.A = 0x67DF8615;
 			Guid.B = 0x6EFDC8BA;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
