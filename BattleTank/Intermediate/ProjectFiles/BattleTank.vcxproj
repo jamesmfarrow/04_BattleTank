@@ -418,7 +418,9 @@
     <ClInclude Include="..\..\Source\BattleTank\BattleTank.h" />
     <ClCompile Include="..\..\Source\BattleTank\BattleTankGameModeBase.cpp" />
     <ClInclude Include="..\..\Source\BattleTank\BattleTankGameModeBase.h" />
+    <ClCompile Include="..\..\Source\BattleTank\Private\TankTrack.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\TankPlayerController.cpp" />
+    <ClInclude Include="..\..\Source\BattleTank\Public\TankTrack.h" />
     <ClInclude Include="..\..\Source\BattleTank\TankPlayerController.h" />
     <ClCompile Include="..\..\Source\BattleTank\Private\Projectile.cpp" />
     <ClCompile Include="..\..\Source\BattleTank\Private\Tank.cpp" />
