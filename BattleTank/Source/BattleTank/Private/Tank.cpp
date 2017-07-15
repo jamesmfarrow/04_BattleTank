@@ -33,11 +33,6 @@ void ATank::SetTurretReference(UTankTurret* TurretToSet)
 	TankAimingComponent->SetTurretReference(TurretToSet);
 }
 
-/*void ATank::SetTurretReference(UTankTurret* TurretToSet)
-{
-	TankAimingComponent->SetTurretReference(TurretToSet);
-}*/
-
 
 // Called when the game starts or when spawned
 void ATank::BeginPlay()
