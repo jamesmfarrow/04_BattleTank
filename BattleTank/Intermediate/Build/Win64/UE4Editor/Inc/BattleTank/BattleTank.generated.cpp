@@ -44,6 +44,7 @@ void EmptyLinkFunctionForGeneratedCode1BattleTank() {}
 	BATTLETANK_API class UClass* Z_Construct_UClass_UTankBarrel();
 	BATTLETANK_API class UClass* Z_Construct_UClass_ATankPlayerController_NoRegister();
 	BATTLETANK_API class UClass* Z_Construct_UClass_ATankPlayerController();
+	BATTLETANK_API class UFunction* Z_Construct_UFunction_UTankTrack_SetThrottle();
 	BATTLETANK_API class UClass* Z_Construct_UClass_UTankTrack_NoRegister();
 	BATTLETANK_API class UClass* Z_Construct_UClass_UTankTrack();
 	BATTLETANK_API class UClass* Z_Construct_UClass_UTankTurret_NoRegister();
@@ -469,6 +470,34 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATankPlayerController);
 	void UTankTrack::StaticRegisterNativesUTankTrack()
 	{
+		UClass* Class = UTankTrack::StaticClass();
+		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
+			{ "SetThrottle", (Native)&UTankTrack::execSetThrottle },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, 1);
+	}
+	UFunction* Z_Construct_UFunction_UTankTrack_SetThrottle()
+	{
+		struct TankTrack_eventSetThrottle_Parms
+		{
+			float Throttle;
+		};
+		UObject* Outer=Z_Construct_UClass_UTankTrack();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("SetThrottle"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(TankTrack_eventSetThrottle_Parms));
+			UProperty* NewProp_Throttle = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Throttle"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(Throttle, TankTrack_eventSetThrottle_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Input"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/TankTrack.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("sets a throttle between -1 and +1"));
+#endif
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_UTankTrack_NoRegister()
 	{
@@ -487,7 +516,9 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20B01080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_UTankTrack_SetThrottle());
 
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UTankTrack_SetThrottle(), "SetThrottle"); // 1922641105
 				static TCppClassTypeInfo<TCppClassTypeTraits<UTankTrack> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
 				OuterClass->StaticLink();
@@ -504,7 +535,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankTrack, 933876994);
+	IMPLEMENT_CLASS(UTankTrack, 2812565505);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankTrack(Z_Construct_UClass_UTankTrack, &UTankTrack::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankTrack"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankTrack);
 	void UTankTurret::StaticRegisterNativesUTankTurret()
@@ -559,8 +590,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/BattleTank")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x3D6D6C6C;
-			Guid.B = 0x80D7732C;
+			Guid.A = 0x1CFC2DF6;
+			Guid.B = 0x437CE069;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

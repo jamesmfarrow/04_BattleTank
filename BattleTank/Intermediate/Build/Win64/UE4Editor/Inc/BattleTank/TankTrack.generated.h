@@ -13,8 +13,30 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BATTLETANK_TankTrack_generated_h
 
-#define BattleTank_Source_BattleTank_Public_TankTrack_h_15_RPC_WRAPPERS
-#define BattleTank_Source_BattleTank_Public_TankTrack_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define BattleTank_Source_BattleTank_Public_TankTrack_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetThrottle) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Throttle); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->SetThrottle(Z_Param_Throttle); \
+		P_NATIVE_END; \
+	}
+
+
+#define BattleTank_Source_BattleTank_Public_TankTrack_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetThrottle) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Throttle); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->SetThrottle(Z_Param_Throttle); \
+		P_NATIVE_END; \
+	}
+
+
 #define BattleTank_Source_BattleTank_Public_TankTrack_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUTankTrack(); \
