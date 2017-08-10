@@ -7,6 +7,7 @@
 
 class UTankTurret; // forward declaration
 class UTankBarrel; // forward declaration
+class UTankMovementComponent; //forward declaration
 class UTankAimingComponent; // forward declaration
 class AProjectile;
 
@@ -30,6 +31,9 @@ public:
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
+
+	UPROPERTY(BlueprintReadOnly)
+	UTankMovementComponent* TankMovementComponent = nullptr;
 
 private:
 	// Sets default values for this pawn's properties
