@@ -8,12 +8,22 @@
 #include "ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UTankTrack;
 #ifdef BATTLETANK_TankMovementComponent_generated_h
 #error "TankMovementComponent.generated.h already included, missing '#pragma once' in TankMovementComponent.h"
 #endif
 #define BATTLETANK_TankMovementComponent_generated_h
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_RPC_WRAPPERS \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execIntendTurnRight) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Throw); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->IntendTurnRight(Z_Param_Throw); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execIntendMoveForward) \
 	{ \
@@ -22,10 +32,29 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 		P_NATIVE_BEGIN; \
 		this->IntendMoveForward(Z_Param_Throw); \
 		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execInitialise) \
+	{ \
+		P_GET_OBJECT(UTankTrack,Z_Param_LeftTrackToSet); \
+		P_GET_OBJECT(UTankTrack,Z_Param_RightTrackToSet); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Initialise(Z_Param_LeftTrackToSet,Z_Param_RightTrackToSet); \
+		P_NATIVE_END; \
 	}
 
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execIntendTurnRight) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Throw); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->IntendTurnRight(Z_Param_Throw); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execIntendMoveForward) \
 	{ \
@@ -34,10 +63,20 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 		P_NATIVE_BEGIN; \
 		this->IntendMoveForward(Z_Param_Throw); \
 		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execInitialise) \
+	{ \
+		P_GET_OBJECT(UTankTrack,Z_Param_LeftTrackToSet); \
+		P_GET_OBJECT(UTankTrack,Z_Param_RightTrackToSet); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Initialise(Z_Param_LeftTrackToSet,Z_Param_RightTrackToSet); \
+		P_NATIVE_END; \
 	}
 
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_INCLASS_NO_PURE_DECLS \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUTankMovementComponent(); \
 	friend BATTLETANK_API class UClass* Z_Construct_UClass_UTankMovementComponent(); \
@@ -47,7 +86,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_INCLASS \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesUTankMovementComponent(); \
 	friend BATTLETANK_API class UClass* Z_Construct_UClass_UTankMovementComponent(); \
@@ -57,7 +96,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_STANDARD_CONSTRUCTORS \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UTankMovementComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UTankMovementComponent) \
@@ -70,7 +109,7 @@ private: \
 public:
 
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_ENHANCED_CONSTRUCTORS \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UTankMovementComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -83,26 +122,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UTankMovementComponent); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UTankMovementComponent)
 
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_PRIVATE_PROPERTY_OFFSET
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_12_PROLOG
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_GENERATED_BODY_LEGACY \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_PRIVATE_PROPERTY_OFFSET
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_14_PROLOG
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_PRIVATE_PROPERTY_OFFSET \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_RPC_WRAPPERS \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_INCLASS \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_STANDARD_CONSTRUCTORS \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_PRIVATE_PROPERTY_OFFSET \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_RPC_WRAPPERS \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_INCLASS \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_GENERATED_BODY \
+#define BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_PRIVATE_PROPERTY_OFFSET \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_INCLASS_NO_PURE_DECLS \
-	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_15_ENHANCED_CONSTRUCTORS \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_PRIVATE_PROPERTY_OFFSET \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_INCLASS_NO_PURE_DECLS \
+	BattleTank_Source_BattleTank_Public_TankMovementComponent_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
