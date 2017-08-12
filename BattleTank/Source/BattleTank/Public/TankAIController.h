@@ -24,5 +24,8 @@ private:
 
 	/// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	// How cloae can AI tank get to the player
+	float AcceptanceRadius = 3000; // assume measued in cm
 	
 };
