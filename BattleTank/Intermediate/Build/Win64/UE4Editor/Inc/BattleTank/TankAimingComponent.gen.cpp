@@ -17,8 +17,11 @@ void EmptyLinkFunctionForGeneratedCodeTankAimingComponent() {}
 // Cross Module References
 	BATTLETANK_API UEnum* Z_Construct_UEnum_BattleTank_EFiringState();
 	UPackage* Z_Construct_UPackage__Script_BattleTank();
-	BATTLETANK_API UClass* Z_Construct_UClass_UTankAimingComponent_NoRegister();
+	BATTLETANK_API UFunction* Z_Construct_UFunction_UTankAimingComponent_Initialise();
 	BATTLETANK_API UClass* Z_Construct_UClass_UTankAimingComponent();
+	BATTLETANK_API UClass* Z_Construct_UClass_UTankTurret_NoRegister();
+	BATTLETANK_API UClass* Z_Construct_UClass_UTankBarrel_NoRegister();
+	BATTLETANK_API UClass* Z_Construct_UClass_UTankAimingComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 // End Cross Module References
 static UEnum* EFiringState_StaticEnum()
@@ -56,6 +59,37 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 	uint32 Get_Z_Construct_UEnum_BattleTank_EFiringState_CRC() { return 3724748293U; }
 	void UTankAimingComponent::StaticRegisterNativesUTankAimingComponent()
 	{
+		UClass* Class = UTankAimingComponent::StaticClass();
+		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
+			{ "Initialise", (Native)&UTankAimingComponent::execInitialise },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, ARRAY_COUNT(AnsiFuncs));
+	}
+	UFunction* Z_Construct_UFunction_UTankAimingComponent_Initialise()
+	{
+		struct TankAimingComponent_eventInitialise_Parms
+		{
+			UTankBarrel* BarrelToSet;
+			UTankTurret* TurretToSet;
+		};
+		UObject* Outer = Z_Construct_UClass_UTankAimingComponent();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Initialise"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535, sizeof(TankAimingComponent_eventInitialise_Parms));
+			UProperty* NewProp_TurretToSet = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("TurretToSet"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(TurretToSet, TankAimingComponent_eventInitialise_Parms), 0x0010000000080080, Z_Construct_UClass_UTankTurret_NoRegister());
+			UProperty* NewProp_BarrelToSet = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("BarrelToSet"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(BarrelToSet, TankAimingComponent_eventInitialise_Parms), 0x0010000000080080, Z_Construct_UClass_UTankBarrel_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Setup"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/TankAimingComponent.h"));
+			MetaData->SetValue(NewProp_TurretToSet, TEXT("EditInline"), TEXT("true"));
+			MetaData->SetValue(NewProp_BarrelToSet, TEXT("EditInline"), TEXT("true"));
+#endif
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_UTankAimingComponent_NoRegister()
 	{
@@ -74,9 +108,11 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= (EClassFlags)0x20B00080u;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_UTankAimingComponent_Initialise());
 
 				UProperty* NewProp_FiringState = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FiringState"), RF_Public|RF_Transient|RF_MarkAsNative) UEnumProperty(CPP_PROPERTY_BASE(FiringState, UTankAimingComponent), 0x0020080000000014, Z_Construct_UEnum_BattleTank_EFiringState());
 				UProperty* NewProp_FiringState_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_FiringState, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UTankAimingComponent_Initialise(), "Initialise"); // 2301087609
 				static TCppClassTypeInfo<TCppClassTypeTraits<UTankAimingComponent> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
 				OuterClass->StaticLink();
@@ -95,7 +131,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankAimingComponent, 1455346499);
+	IMPLEMENT_CLASS(UTankAimingComponent, 3868243824);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankAimingComponent(Z_Construct_UClass_UTankAimingComponent, &UTankAimingComponent::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankAimingComponent"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankAimingComponent);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
