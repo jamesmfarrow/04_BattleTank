@@ -22,21 +22,22 @@ ATank::ATank()
 // Called when the game starts or when spawned
 void ATank::BeginPlay()
 {
-	Super::BeginPlay();
+	Super::BeginPlay(); // Needed for Blueprint Beginplay to run!
 	
 }
 
 void ATank::AimAt(FVector OutHitLocation)
 {
-	if (!TankAimingComponent) { return; }
+	if (!ensure (TankAimingComponent) ) { return; }
 	TankAimingComponent->AimAt(OutHitLocation, LaunchSpeed);
 }
 
 void ATank::Fire()
 {
+	if (!ensure (Barrel) ) { return; }
 	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
 
-	if (Barrel && isReloaded)
+	if (isReloaded)
 	{
 		// spawn projectile at socket location
 		auto Projectile = GetWorld()->SpawnActor<AProjectile>(

@@ -42,7 +42,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 void UTankAimingComponent::AimAt(FVector OutHitLocation, float LaunchSpeed)
 {
-	if (!Barrel ) { UE_LOG(LogTemp, Warning, TEXT("not barrel")); return;  }
+	if (!ensure (Barrel) ) { UE_LOG(LogTemp, Warning, TEXT("not barrel")); return;  }
 
 	FVector OutLaunchVelocity;
 	FVector StartLocation = Barrel->GetSocketLocation(FName ("Projectile"));
@@ -70,7 +70,7 @@ void UTankAimingComponent::AimAt(FVector OutHitLocation, float LaunchSpeed)
 
 void  UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
-	if (!Barrel || !Turret) { return; }
+	if (!ensure (Barrel && Turret)) { return; }
 
 	//work pout difference between current barrel rotation and AimDirection
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
