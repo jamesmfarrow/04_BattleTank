@@ -110,6 +110,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 
 				OuterClass->LinkChild(Z_Construct_UFunction_UTankAimingComponent_Initialise());
 
+				UProperty* NewProp_LaunchSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LaunchSpeed"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(LaunchSpeed, UTankAimingComponent), 0x0040000000010001);
 				UProperty* NewProp_FiringState = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FiringState"), RF_Public|RF_Transient|RF_MarkAsNative) UEnumProperty(CPP_PROPERTY_BASE(FiringState, UTankAimingComponent), 0x0020080000000014, Z_Construct_UEnum_BattleTank_EFiringState());
 				UProperty* NewProp_FiringState_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_FiringState, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UTankAimingComponent_Initialise(), "Initialise"); // 2301087609
@@ -123,6 +124,8 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TankAimingComponent.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/TankAimingComponent.h"));
 				MetaData->SetValue(OuterClass, TEXT("ToolTip"), TEXT("Holds barrels properties and elevate method"));
+				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("Category"), TEXT("Firing"));
+				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("ModuleRelativePath"), TEXT("Public/TankAimingComponent.h"));
 				MetaData->SetValue(NewProp_FiringState, TEXT("Category"), TEXT("State"));
 				MetaData->SetValue(NewProp_FiringState, TEXT("ModuleRelativePath"), TEXT("Public/TankAimingComponent.h"));
 #endif
@@ -131,7 +134,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankAimingComponent, 3868243824);
+	IMPLEMENT_CLASS(UTankAimingComponent, 41317890);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankAimingComponent(Z_Construct_UClass_UTankAimingComponent, &UTankAimingComponent::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankAimingComponent"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankAimingComponent);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

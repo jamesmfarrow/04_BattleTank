@@ -2,7 +2,7 @@
 
 
 #include "BattleTank.h"
-#include "Tank.h"
+#include "TankAimingComponent.h"
 #include "TankAIController.h"
 // Depends on movement component via pathfinding system
 
@@ -16,18 +16,19 @@ void ATankAIController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	auto PlayerTank = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
-	auto ControlledTank = Cast<ATank>(GetPawn());
+	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
+	auto ControlledTank = GetPawn();
 
-	if(ensure (PlayerTank) )
-	{
-		// move towards the player
-		MoveToActor(PlayerTank, AcceptanceRadius); // TODO check radius is in cm
-
-		// Aim towards player
-		ControlledTank->AimAt(PlayerTank->GetActorLocation());
+	if (!ensure(PlayerTank && ControlledTank)) { return; }
 	
-		ControlledTank->Fire(); // TODO dont fire every frame
-	}
+	// move towards the player
+	MoveToActor(PlayerTank, AcceptanceRadius); // TODO check radius is in cm
+
+	// Aim towards player
+	auto AimincComponent = ControlledTank->FindComponentByClass<UTankAimingComponent>();
+	AimincComponent->AimAt(PlayerTank->GetActorLocation());
+	
+	//TODO fix firing
+	//ControlledTank->Fire(); // TODO dont fire every frame
 }
 

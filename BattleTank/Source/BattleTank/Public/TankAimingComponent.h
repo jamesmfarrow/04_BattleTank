@@ -28,7 +28,7 @@ public:
 	UFUNCTION(Blueprintcallable, Category = "Setup")
 	void Initialise( UTankBarrel* BarrelToSet, UTankTurret* TurretToSet );
 
-	void AimAt(FVector OutHitLocation, float LaunchSpeed);
+	void AimAt(FVector OutHitLocation);
 
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -45,6 +45,9 @@ private:
 
 	// Sets default values for this component's properties
 	UTankAimingComponent();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	float LaunchSpeed = 4000; // TODO find sensible default
 
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
