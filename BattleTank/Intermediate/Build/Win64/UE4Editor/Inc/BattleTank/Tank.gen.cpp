@@ -22,7 +22,6 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 	UPackage* Z_Construct_UPackage__Script_BattleTank();
 	BATTLETANK_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
-	BATTLETANK_API UClass* Z_Construct_UClass_UTankMovementComponent_NoRegister();
 	BATTLETANK_API UClass* Z_Construct_UClass_UTankAimingComponent_NoRegister();
 // End Cross Module References
 	void ATank::StaticRegisterNativesATank()
@@ -72,7 +71,6 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 				UProperty* NewProp_ReloadTimeInSeconds = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ReloadTimeInSeconds"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ReloadTimeInSeconds, ATank), 0x0040000000010001);
 				UProperty* NewProp_LaunchSpeed = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LaunchSpeed"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(LaunchSpeed, ATank), 0x0040000000010001);
 				UProperty* NewProp_ProjectileBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ProjectileBluePrint"), RF_Public|RF_Transient|RF_MarkAsNative) UClassProperty(CPP_PROPERTY_BASE(ProjectileBluePrint, ATank), 0x0044000000010001, Z_Construct_UClass_AProjectile_NoRegister(), Z_Construct_UClass_UClass());
-				UProperty* NewProp_TankMovementComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TankMovementComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(TankMovementComponent, ATank), 0x002008000008001c, Z_Construct_UClass_UTankMovementComponent_NoRegister());
 				UProperty* NewProp_TankAimingComponent = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("TankAimingComponent"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(TankAimingComponent, ATank), 0x002008000008001c, Z_Construct_UClass_UTankAimingComponent_NoRegister());
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ATank_Fire(), "Fire"); // 929031273
 				static TCppClassTypeInfo<TCppClassTypeTraits<ATank> > StaticCppClassTypeInfo;
@@ -85,14 +83,11 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
 				MetaData->SetValue(NewProp_ReloadTimeInSeconds, TEXT("Category"), TEXT("Firing"));
 				MetaData->SetValue(NewProp_ReloadTimeInSeconds, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
-				MetaData->SetValue(NewProp_ReloadTimeInSeconds, TEXT("ToolTip"), TEXT("TODO find sensible default"));
+				MetaData->SetValue(NewProp_ReloadTimeInSeconds, TEXT("ToolTip"), TEXT("TODO remove once firing moved to aiming component"));
 				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("Category"), TEXT("Firing"));
 				MetaData->SetValue(NewProp_LaunchSpeed, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
 				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("Category"), TEXT("Setup"));
 				MetaData->SetValue(NewProp_ProjectileBluePrint, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
-				MetaData->SetValue(NewProp_TankMovementComponent, TEXT("Category"), TEXT("Tank"));
-				MetaData->SetValue(NewProp_TankMovementComponent, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_TankMovementComponent, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
 				MetaData->SetValue(NewProp_TankAimingComponent, TEXT("Category"), TEXT("Tank"));
 				MetaData->SetValue(NewProp_TankAimingComponent, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_TankAimingComponent, TEXT("ModuleRelativePath"), TEXT("Public/Tank.h"));
@@ -102,7 +97,7 @@ void EmptyLinkFunctionForGeneratedCodeTank() {}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATank, 2573195221);
+	IMPLEMENT_CLASS(ATank, 3879824287);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATank(Z_Construct_UClass_ATank, &ATank::StaticClass, TEXT("/Script/BattleTank"), TEXT("ATank"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATank);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
