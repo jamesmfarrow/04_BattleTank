@@ -2,12 +2,12 @@
 
 
 
-
-
 #include "BattleTank.h"
-#include "TankBarrel.h"
-#include "Projectile.h"
+//#include "TankBarrel.h"
+//#include "Projectile.h"
 #include "Tank.h"
+
+
 
 
 // Sets default values
@@ -23,6 +23,7 @@ void ATank::BeginPlay()
 	Super::BeginPlay(); // Needed for Blueprint Beginplay to run!
 }
 
+/*
 void ATank::Fire()
 {
 	if (!ensure (Barrel) ) { return; }
@@ -41,4 +42,4 @@ void ATank::Fire()
 		LastFireTime = FPlatformTime::Seconds();
 	}
 }
-
+*/

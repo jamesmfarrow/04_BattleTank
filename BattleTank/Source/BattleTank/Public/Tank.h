@@ -5,9 +5,9 @@
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h" // put new includes above this
 
-class UTankTurret; // forward declaration
-class UTankBarrel; // forward declaration
-class AProjectile;
+//class UTankTurret; // forward declaration
+//class UTankBarrel; // forward declaration
+//class AProjectile;
 
 
 UCLASS()
@@ -17,8 +17,8 @@ class BATTLETANK_API ATank : public APawn
 
 public:
 
-	UFUNCTION(Blueprintcallable, Category = Firing)
-	void Fire();
+	//UFUNCTION(Blueprintcallable, Category = Firing)
+	//void Fire();
 
 private:
 	// Sets default values for this pawn's properties
@@ -27,7 +27,7 @@ private:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Setup" )
+	/*UPROPERTY(EditDefaultsOnly, Category = "Setup" )
 	TSubclassOf<AProjectile> ProjectileBluePrint;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing" )
@@ -40,5 +40,5 @@ private:
 	UTankBarrel* Barrel = nullptr; // TODO remove
 
 	double LastFireTime = 0;
-
+	*/
 };

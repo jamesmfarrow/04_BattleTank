@@ -13,28 +13,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BATTLETANK_Tank_generated_h
 
-#define BattleTank_Source_BattleTank_Public_Tank_h_16_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execFire) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		this->Fire(); \
-		P_NATIVE_END; \
-	}
-
-
-#define BattleTank_Source_BattleTank_Public_Tank_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execFire) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		this->Fire(); \
-		P_NATIVE_END; \
-	}
-
-
+#define BattleTank_Source_BattleTank_Public_Tank_h_16_RPC_WRAPPERS
+#define BattleTank_Source_BattleTank_Public_Tank_h_16_RPC_WRAPPERS_NO_PURE_DECLS
 #define BattleTank_Source_BattleTank_Public_Tank_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATank(); \
@@ -79,12 +59,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATank); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATank)
 
 
-#define BattleTank_Source_BattleTank_Public_Tank_h_16_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__ProjectileBluePrint() { return STRUCT_OFFSET(ATank, ProjectileBluePrint); } \
-	FORCEINLINE static uint32 __PPO__LaunchSpeed() { return STRUCT_OFFSET(ATank, LaunchSpeed); } \
-	FORCEINLINE static uint32 __PPO__ReloadTimeInSeconds() { return STRUCT_OFFSET(ATank, ReloadTimeInSeconds); }
-
-
+#define BattleTank_Source_BattleTank_Public_Tank_h_16_PRIVATE_PROPERTY_OFFSET
 #define BattleTank_Source_BattleTank_Public_Tank_h_13_PROLOG
 #define BattleTank_Source_BattleTank_Public_Tank_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

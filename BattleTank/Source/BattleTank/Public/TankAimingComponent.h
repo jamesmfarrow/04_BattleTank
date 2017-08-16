@@ -15,8 +15,9 @@ enum class EFiringState : uint8
 };
 
 // forward declaration
-class UTankBarrel;
-class UTankTurret;
+class UTankTurret; // forward declaration
+class UTankBarrel; // forward declaration
+class AProjectile;
 
 //Holds barrels properties and elevate method
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
@@ -32,6 +33,9 @@ public:
 
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	UFUNCTION(Blueprintcallable, Category = Firing)
+	void Fire();
 
 protected:
 	// Called when the game starts
@@ -53,4 +57,13 @@ private:
 	UTankTurret* Turret = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	TSubclassOf<AProjectile> ProjectileBluePrint;
+
+	// TODO remove once firing moved to aiming component
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	float ReloadTimeInSeconds = 3;
+
+	double LastFireTime = 0;
 };
