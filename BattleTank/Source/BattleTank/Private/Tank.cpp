@@ -18,28 +18,7 @@ ATank::ATank()
 }
 
 // Called when the game starts or when spawned
-void ATank::BeginPlay()
+/*void ATank::BeginPlay()
 {
 	Super::BeginPlay(); // Needed for Blueprint Beginplay to run!
-}
-
-/*
-void ATank::Fire()
-{
-	if (!ensure (Barrel) ) { return; }
-	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
-
-	if (isReloaded)
-	{
-		// spawn projectile at socket location
-		auto Projectile = GetWorld()->SpawnActor<AProjectile>(
-			ProjectileBluePrint,
-			Barrel->GetSocketLocation(FName("Projectile")),
-			Barrel->GetSocketRotation(FName("Projectile"))
-			);
-
-		Projectile->LaunchProjectile(LaunchSpeed);
-		LastFireTime = FPlatformTime::Seconds();
-	}
-}
-*/
+}*/
