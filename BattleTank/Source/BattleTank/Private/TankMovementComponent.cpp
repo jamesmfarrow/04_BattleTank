@@ -20,7 +20,6 @@ void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool
 	auto AIforwardIntention = MoveVelocity.GetSafeNormal();
 
 	auto RequiredThrowMoveForward = FVector::DotProduct(TankForward, AIforwardIntention);
-	//UE_LOG(LogTemp, Warning, TEXT("%s vectoring to %s"), *TankName, *MoveVelocityString)
 
 	IntendMoveForward(RequiredThrowMoveForward);
 
@@ -38,8 +37,6 @@ void  UTankMovementComponent::IntendMoveForward(float Throw)
 
 void  UTankMovementComponent::IntendTurnRight(float Throw)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Intend turn right throw: %f"), Throw)
-
 	if (!ensure (LeftTrack && RightTrack)) { return; }
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(-Throw);
