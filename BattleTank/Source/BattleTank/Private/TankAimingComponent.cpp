@@ -12,9 +12,20 @@ UTankAimingComponent::UTankAimingComponent()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = false; //TODO should this tick?
+	PrimaryComponentTick.bCanEverTick = true; //TODO should this tick?
 
 	// ...
+}
+
+// Called every frame
+void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	//Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	if ((FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds)
+	{
+		FiringState = EFiringState::Reloading;
+	}
+	// ...TODO Handle Aiming and locked state
 }
 
 void  UTankAimingComponent::Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet)
@@ -27,18 +38,11 @@ void  UTankAimingComponent::Initialise(UTankBarrel* BarrelToSet, UTankTurret* Tu
 // Called when the game starts
 void UTankAimingComponent::BeginPlay()
 {
-	Super::BeginPlay();
+	//Super::BeginPlay();
 
 	// ...
-	
-}
-
-// Called every frame
-void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
+	// so that first fire is after initial reload
+	LastFireTime = FPlatformTime::Seconds();
 }
 
 void UTankAimingComponent::AimAt(FVector OutHitLocation)
@@ -83,12 +87,11 @@ void  UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 
 void UTankAimingComponent::Fire()
 {
-	if (!ensure(Barrel && ProjectileBluePrint )) { return; }
-	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
-
-	if (isReloaded)
+	if (FiringState != EFiringState::Reloading)
 	{
 		// spawn projectile at socket location
+		if (!ensure( Barrel )) { return; }
+		if (!ensure( ProjectileBluePrint )) { return; }
 		auto Projectile = GetWorld()->SpawnActor<AProjectile>(
 			ProjectileBluePrint,
 			Barrel->GetSocketLocation(FName("Projectile")),
