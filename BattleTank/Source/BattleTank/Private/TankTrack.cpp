@@ -5,7 +5,7 @@
 
 UTankTrack::UTankTrack()
 {
-	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bCanEverTick = false;
 }
 
 void UTankTrack::BeginPlay()
@@ -14,30 +14,44 @@ void UTankTrack::BeginPlay()
 }
 
 void UTankTrack::OnHit( UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, 
-							const FHitResult& Hit )
+						const FHitResult& Hit )
 {
-	UE_LOG(LogTemp, Warning, TEXT("I'm Hit, I'm Hit!"))
+	// drive the tracks
+	DriveTrack();
+	// apply sideways force
+	ApplySidewaysForce();
+	// reset throttle
+	CurrentThrottle = 0;
 }
 
-void UTankTrack::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+/*void UTankTrack::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+}*/
 
+void UTankTrack::ApplySidewaysForce()
+{
+	auto DeltaTime = GetWorld()->GetDeltaSeconds();
 	// calculate the slippage speed (cross product)
-	auto SlippageSpeed = FVector::DotProduct(GetRightVector(), GetComponentVelocity() );
+	auto SlippageSpeed = FVector::DotProduct(GetRightVector(), GetComponentVelocity());
 	// work out the required acceleration this frame to correct minus for opposite direction
 	auto CorrectionAcceleration = -SlippageSpeed / DeltaTime * GetRightVector();
+	
 	// calculate and apply sideways force F=ma
-	auto TankRoot = Cast<UStaticMeshComponent>( GetOwner()->GetRootComponent() );
+	auto TankRoot = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
 	auto CorrectionForce = (TankRoot->GetMass() * CorrectionAcceleration) / 2; // 2tracks
 	TankRoot->AddForce(CorrectionForce);
 }
  
 void UTankTrack::SetThrottle(float Throttle)
 {
-	auto ForceApplied = GetForwardVector() * Throttle * TrackMaxDrivingForce;
+	CurrentThrottle = FMath::Clamp<float>(CurrentThrottle + Throttle, -1, 1);
+}
+
+void UTankTrack::DriveTrack()
+{
+	auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
 	auto ForceLocation = GetComponentLocation();
 	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
 	TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
 }
-

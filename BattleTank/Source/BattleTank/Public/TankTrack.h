@@ -27,7 +27,12 @@ private:
 	UTankTrack();
 
 	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	void ApplySidewaysForce();
+
+	void DriveTrack();
+	float CurrentThrottle = 0;
 
 	virtual void BeginPlay() override;
 	
