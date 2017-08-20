@@ -34,6 +34,9 @@ public:
 	UFUNCTION(Blueprintcallable, Category = Firing)
 	void Fire();
 
+	// helper method to get fire state
+	EFiringState GetFiringState() const;
+
 protected:
 	
 	UPROPERTY(BlueprintReadOnly, Category = "State")
