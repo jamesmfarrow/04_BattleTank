@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeTankAimingComponent() {}
 	UPackage* Z_Construct_UPackage__Script_BattleTank();
 	BATTLETANK_API UFunction* Z_Construct_UFunction_UTankAimingComponent_Fire();
 	BATTLETANK_API UClass* Z_Construct_UClass_UTankAimingComponent();
+	BATTLETANK_API UFunction* Z_Construct_UFunction_UTankAimingComponent_GetRoundsLeft();
 	BATTLETANK_API UFunction* Z_Construct_UFunction_UTankAimingComponent_Initialise();
 	BATTLETANK_API UClass* Z_Construct_UClass_UTankTurret_NoRegister();
 	BATTLETANK_API UClass* Z_Construct_UClass_UTankBarrel_NoRegister();
@@ -49,7 +50,8 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 			EnumNames.Emplace(TEXT("EFiringState::Reloading"), 0);
 			EnumNames.Emplace(TEXT("EFiringState::Aiming"), 1);
 			EnumNames.Emplace(TEXT("EFiringState::Locked"), 2);
-			EnumNames.Emplace(TEXT("EFiringState::EFiringState_MAX"), 3);
+			EnumNames.Emplace(TEXT("EFiringState::OutOfAmmunition"), 3);
+			EnumNames.Emplace(TEXT("EFiringState::EFiringState_MAX"), 4);
 			ReturnEnum->SetEnums(EnumNames, UEnum::ECppForm::EnumClass);
 			ReturnEnum->CppType = TEXT("EFiringState");
 #if WITH_METADATA
@@ -59,12 +61,13 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 		}
 		return ReturnEnum;
 	}
-	uint32 Get_Z_Construct_UEnum_BattleTank_EFiringState_CRC() { return 3724748293U; }
+	uint32 Get_Z_Construct_UEnum_BattleTank_EFiringState_CRC() { return 2006315171U; }
 	void UTankAimingComponent::StaticRegisterNativesUTankAimingComponent()
 	{
 		UClass* Class = UTankAimingComponent::StaticClass();
 		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
 			{ "Fire", (Native)&UTankAimingComponent::execFire },
+			{ "GetRoundsLeft", (Native)&UTankAimingComponent::execGetRoundsLeft },
 			{ "Initialise", (Native)&UTankAimingComponent::execInitialise },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, ARRAY_COUNT(AnsiFuncs));
@@ -76,6 +79,28 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 		if (!ReturnFunction)
 		{
 			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("Fire"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Firing"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/TankAimingComponent.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_UTankAimingComponent_GetRoundsLeft()
+	{
+		struct TankAimingComponent_eventGetRoundsLeft_Parms
+		{
+			int32 ReturnValue;
+		};
+		UObject* Outer = Z_Construct_UClass_UTankAimingComponent();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetRoundsLeft"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x54020401, 65535, sizeof(TankAimingComponent_eventGetRoundsLeft_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(ReturnValue, TankAimingComponent_eventGetRoundsLeft_Parms), 0x0010000000000580);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -130,6 +155,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 				OuterClass->ClassFlags |= (EClassFlags)0x20B00080u;
 
 				OuterClass->LinkChild(Z_Construct_UFunction_UTankAimingComponent_Fire());
+				OuterClass->LinkChild(Z_Construct_UFunction_UTankAimingComponent_GetRoundsLeft());
 				OuterClass->LinkChild(Z_Construct_UFunction_UTankAimingComponent_Initialise());
 
 				UProperty* NewProp_ReloadTimeInSeconds = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ReloadTimeInSeconds"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(ReloadTimeInSeconds, UTankAimingComponent), 0x0040000000010001);
@@ -138,6 +164,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 				UProperty* NewProp_FiringState = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("FiringState"), RF_Public|RF_Transient|RF_MarkAsNative) UEnumProperty(CPP_PROPERTY_BASE(FiringState, UTankAimingComponent), 0x0020080000000014, Z_Construct_UEnum_BattleTank_EFiringState());
 				UProperty* NewProp_FiringState_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_FiringState, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UTankAimingComponent_Fire(), "Fire"); // 3517979577
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UTankAimingComponent_GetRoundsLeft(), "GetRoundsLeft"); // 332638343
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UTankAimingComponent_Initialise(), "Initialise"); // 2301087609
 				static TCppClassTypeInfo<TCppClassTypeTraits<UTankAimingComponent> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -165,7 +192,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EFiringState(EFiringStat
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UTankAimingComponent, 1414122115);
+	IMPLEMENT_CLASS(UTankAimingComponent, 2945787297);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTankAimingComponent(Z_Construct_UClass_UTankAimingComponent, &UTankAimingComponent::StaticClass, TEXT("/Script/BattleTank"), TEXT("UTankAimingComponent"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UTankAimingComponent);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
