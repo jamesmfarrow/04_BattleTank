@@ -66,16 +66,16 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000; // TODO find sensible default
 
-	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-	TSubclassOf<AProjectile> ProjectileBluePrint;
-
-	// TODO remove once firing moved to aiming component
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3;
 
-	double LastFireTime = 0;
-
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	int32 RoundsLeft = 3;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	TSubclassOf<AProjectile> ProjectileBluePrint;
+
 	FVector AimDirection;
+	double LastFireTime = 0;
+
 };
