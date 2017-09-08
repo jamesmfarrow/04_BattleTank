@@ -24,6 +24,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 	BATTLETANK_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_BattleTank();
+	ENGINE_API UClass* Z_Construct_UClass_URadialForceComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystemComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
@@ -86,6 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AProjectile_OnHit());
 
+				UProperty* NewProp_ExplosionForce = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ExplosionForce"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ExplosionForce, AProjectile), 0x00400000000a0009, Z_Construct_UClass_URadialForceComponent_NoRegister());
 				UProperty* NewProp_ImpactBlast = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ImpactBlast"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ImpactBlast, AProjectile), 0x00400000000a0009, Z_Construct_UClass_UParticleSystemComponent_NoRegister());
 				UProperty* NewProp_LaunchBlast = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LaunchBlast"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(LaunchBlast, AProjectile), 0x00400000000a0009, Z_Construct_UClass_UParticleSystemComponent_NoRegister());
 				UProperty* NewProp_CollisionMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionMesh"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CollisionMesh, AProjectile), 0x00400000000a0009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
@@ -97,6 +99,9 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Projectile.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Public/Projectile.h"));
+				MetaData->SetValue(NewProp_ExplosionForce, TEXT("Category"), TEXT("Components"));
+				MetaData->SetValue(NewProp_ExplosionForce, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_ExplosionForce, TEXT("ModuleRelativePath"), TEXT("Public/Projectile.h"));
 				MetaData->SetValue(NewProp_ImpactBlast, TEXT("Category"), TEXT("Components"));
 				MetaData->SetValue(NewProp_ImpactBlast, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_ImpactBlast, TEXT("ModuleRelativePath"), TEXT("Public/Projectile.h"));
@@ -112,7 +117,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AProjectile, 3176471566);
+	IMPLEMENT_CLASS(AProjectile, 1243060865);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AProjectile(Z_Construct_UClass_AProjectile, &AProjectile::StaticClass, TEXT("/Script/BattleTank"), TEXT("AProjectile"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AProjectile);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
