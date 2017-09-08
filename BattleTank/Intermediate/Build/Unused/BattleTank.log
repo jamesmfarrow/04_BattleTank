@@ -1,0 +1,12 @@
+﻿C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\BattleTank.Build.cs : warning : Module constructors should take a ReadOnlyTargetRules argument (rather than a TargetInfo argument) and pass it to the base class constructor from 4.15 onwards. Please update the method signature.
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank.Target.cs : warning : SetupBinaries() is deprecated in the 4.16 release. From the constructor in your .target.cs file, use ExtraModuleNames.Add("Foo") to add modules to your target, or set LaunchModuleName = "Foo" to override the name of the launch module for program targets.
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTankEditor.Target.cs : warning : SetupBinaries() is deprecated in the 4.16 release. From the constructor in your .target.cs file, use ExtraModuleNames.Add("Foo") to add modules to your target, or set LaunchModuleName = "Foo" to override the name of the launch module for program targets.
+  Compiling game modules for hot reload
+  Performing 3 actions (2 in parallel)
+  Projectile.cpp
+  [2/3] Link UE4Editor-BattleTank-2797.dll
+  [3/3] Link UE4Editor-BattleTank-2797.lib
+     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.exp
+     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.suppressed.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.suppressed.exp
+  Deploying BattleTankEditor Win64 Development...
+  Total build time: 14.18 seconds (Local executor: 5.76 seconds)
