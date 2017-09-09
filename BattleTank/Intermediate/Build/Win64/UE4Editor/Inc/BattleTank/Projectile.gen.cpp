@@ -91,6 +91,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 				UProperty* NewProp_ImpactBlast = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ImpactBlast"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ImpactBlast, AProjectile), 0x00400000000a0009, Z_Construct_UClass_UParticleSystemComponent_NoRegister());
 				UProperty* NewProp_LaunchBlast = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("LaunchBlast"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(LaunchBlast, AProjectile), 0x00400000000a0009, Z_Construct_UClass_UParticleSystemComponent_NoRegister());
 				UProperty* NewProp_CollisionMesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CollisionMesh"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(CollisionMesh, AProjectile), 0x00400000000a0009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_DestroyDelay = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("DestroyDelay"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(DestroyDelay, AProjectile), 0x0040000000010001);
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_AProjectile_OnHit(), "OnHit"); // 4047160438
 				static TCppClassTypeInfo<TCppClassTypeTraits<AProjectile> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -111,13 +112,15 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 				MetaData->SetValue(NewProp_CollisionMesh, TEXT("Category"), TEXT("Components"));
 				MetaData->SetValue(NewProp_CollisionMesh, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_CollisionMesh, TEXT("ModuleRelativePath"), TEXT("Public/Projectile.h"));
+				MetaData->SetValue(NewProp_DestroyDelay, TEXT("Category"), TEXT("Setup"));
+				MetaData->SetValue(NewProp_DestroyDelay, TEXT("ModuleRelativePath"), TEXT("Public/Projectile.h"));
 #endif
 			}
 		}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AProjectile, 1243060865);
+	IMPLEMENT_CLASS(AProjectile, 1335531936);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AProjectile(Z_Construct_UClass_AProjectile, &AProjectile::StaticClass, TEXT("/Script/BattleTank"), TEXT("AProjectile"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AProjectile);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
