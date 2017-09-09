@@ -132,8 +132,6 @@ void UTankAimingComponent::Fire()
 {
 	if (FiringState == EFiringState::Locked  || FiringState == EFiringState::Aiming)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("in fire"))
-
 		// spawn projectile at socket location
 		if (!ensure( Barrel )) { return; }
 		if (!ensure( ProjectileBluePrint )) { return; }

@@ -59,7 +59,11 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATank); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATank)
 
 
-#define BattleTank_Source_BattleTank_Public_Tank_h_11_PRIVATE_PROPERTY_OFFSET
+#define BattleTank_Source_BattleTank_Public_Tank_h_11_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__StartingHealth() { return STRUCT_OFFSET(ATank, StartingHealth); } \
+	FORCEINLINE static uint32 __PPO__CurrentHealth() { return STRUCT_OFFSET(ATank, CurrentHealth); }
+
+
 #define BattleTank_Source_BattleTank_Public_Tank_h_8_PROLOG
 #define BattleTank_Source_BattleTank_Public_Tank_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
