@@ -2,11 +2,15 @@
 C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank.Target.cs : warning : SetupBinaries() is deprecated in the 4.16 release. From the constructor in your .target.cs file, use ExtraModuleNames.Add("Foo") to add modules to your target, or set LaunchModuleName = "Foo" to override the name of the launch module for program targets.
 C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTankEditor.Target.cs : warning : SetupBinaries() is deprecated in the 4.16 release. From the constructor in your .target.cs file, use ExtraModuleNames.Add("Foo") to add modules to your target, or set LaunchModuleName = "Foo" to override the name of the launch module for program targets.
   Compiling game modules for hot reload
-  Performing 3 actions (2 in parallel)
-  Projectile.cpp
-  [2/3] Link UE4Editor-BattleTank-2797.dll
-  [3/3] Link UE4Editor-BattleTank-2797.lib
-     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.exp
-     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.suppressed.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-2797.suppressed.exp
+  Parsing headers for BattleTankEditor
+    Running UnrealHeaderTool "C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\BattleTank.uproject" "C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\BattleTankEditor\Development\BattleTankEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for BattleTankEditor in 14.9921482 seconds
+  Performing 4 actions (2 in parallel)
+  Tank.gen.cpp
+  Tank.cpp
+  [3/4] Link UE4Editor-BattleTank-871.dll
+  [4/4] Link UE4Editor-BattleTank-871.lib
+     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.exp
+     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.suppressed.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.suppressed.exp
   Deploying BattleTankEditor Win64 Development...
-  Total build time: 14.18 seconds (Local executor: 5.76 seconds)
+  Total build time: 207.00 seconds (Local executor: 131.58 seconds)

@@ -18,11 +18,17 @@ ATank::ATank()
 }
 
 // Called when the game starts or when spawned
-/*void ATank::BeginPlay()
+void ATank::BeginPlay()
 {
 	Super::BeginPlay(); // Needed for Blueprint Beginplay to run!
+	//CurrentHealth = StartingHealth;
 	
-}*/
+}
+
+float ATank::GetHealthPercent() const
+{
+	return (float)CurrentHealth / (float)StartingHealth;
+}
 
 float ATank::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEvent, class AController * EventInstigator, AActor * DamageCauser)
 {
@@ -37,3 +43,4 @@ float ATank::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEv
 
 	return DamageToApply;
 }
+
