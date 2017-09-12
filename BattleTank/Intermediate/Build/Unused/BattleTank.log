@@ -4,13 +4,32 @@ C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTan
   Compiling game modules for hot reload
   Parsing headers for BattleTankEditor
     Running UnrealHeaderTool "C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\BattleTank.uproject" "C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\BattleTankEditor\Development\BattleTankEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for BattleTankEditor in 14.9921482 seconds
-  Performing 4 actions (2 in parallel)
+  Reflection code generated for BattleTankEditor in 12.5415381 seconds
+  Performing 9 actions (2 in parallel)
   Tank.gen.cpp
+  TankAIController.gen.cpp
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public/Tank.h(8): warning C4005: 'DECLARE_DYNAMIC_MULTICAST_DELEGATE': macro redefinition
+  c:\program files\epic games\ue_4.17\engine\source\runtime\core\public\Delegates/DelegateCombinations.h(9): note: see previous definition of 'DECLARE_DYNAMIC_MULTICAST_DELEGATE'
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public/Tank.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public/Tank.h(9): error C2146: syntax error: missing ';' before identifier 'OnDeath'
+  Projectile.gen.cpp
+  TankAimingComponent.cpp
+  TankAIController.cpp
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Private\TankAimingComponent.cpp(109): warning C4458: declaration of 'AimDirection' hides class member
+  C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public\TankAimingComponent.h(78): note: see declaration of 'UTankAimingComponent::AimDirection'
   Tank.cpp
-  [3/4] Link UE4Editor-BattleTank-871.dll
-  [4/4] Link UE4Editor-BattleTank-871.lib
-     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.exp
-     Creating library C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.suppressed.lib and object C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BattleTank-871.suppressed.exp
-  Deploying BattleTankEditor Win64 Development...
-  Total build time: 207.00 seconds (Local executor: 131.58 seconds)
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public\Tank.h(8): warning C4005: 'DECLARE_DYNAMIC_MULTICAST_DELEGATE': macro redefinition
+  c:\program files\epic games\ue_4.17\engine\source\runtime\core\public\Delegates/DelegateCombinations.h(9): note: see previous definition of 'DECLARE_DYNAMIC_MULTICAST_DELEGATE'
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public\Tank.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public\Tank.h(9): error C2146: syntax error: missing ';' before identifier 'OnDeath'
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Private\Tank.cpp(42): error C2065: 'OnDeath': undeclared identifier
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Private\Tank.cpp(42): error C2228: left of '.BroadCast' must have class/struct/union
+  C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Private\Tank.cpp(42): note: type is 'unknown-type'
+  Projectile.cpp
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public\Tank.h(8): warning C4005: 'DECLARE_DYNAMIC_MULTICAST_DELEGATE': macro redefinition
+  c:\program files\epic games\ue_4.17\engine\source\runtime\core\public\Delegates/DelegateCombinations.h(9): note: see previous definition of 'DECLARE_DYNAMIC_MULTICAST_DELEGATE'
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public\Tank.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Source\BattleTank\Public\Tank.h(9): error C2146: syntax error: missing ';' before identifier 'OnDeath'
+ERROR : UBT error : Failed to produce item: C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\Binaries\Win64\UE4Editor-BattleTank-653.dll
+  Total build time: 261.78 seconds (Local executor: 0.00 seconds)
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(44,5): error MSB3075: The command ""C:\Program Files\Epic Games\UE_4.17\Engine\Build\BatchFiles\Build.bat" BattleTankEditor Win64 Development "C:\Users\James Farrow\Documents\MyRepo\04_BattleTank\BattleTank\BattleTank.uproject" -waitmutex" exited with code 5. Please verify that you have sufficient rights to run this command.

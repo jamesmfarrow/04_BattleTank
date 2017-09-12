@@ -14,7 +14,6 @@ UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
 
 protected:
 
@@ -24,6 +23,11 @@ protected:
 private:
 	
 	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
+	virtual void SetPawn(APawn* InPawn) override;
 
 /// Called every frame
 	virtual void Tick(float DeltaTime) override;

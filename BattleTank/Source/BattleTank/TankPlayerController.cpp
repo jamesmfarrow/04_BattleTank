@@ -5,6 +5,7 @@
 #include "BattleTank.h"
 #include "TankAimingComponent.h"
 #include "TankPlayerController.h"
+#include "Tank.h" // implement OnDeath
 
 void ATankPlayerController::BeginPlay()
 {
@@ -13,6 +14,26 @@ void ATankPlayerController::BeginPlay()
 	if (!ensure(AimingComponent)) { return;  }
 		FoundAimingComponent(AimingComponent);
 }
+
+void ATankPlayerController::OnPossessedTankDeath()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Player Tank died"));
+}
+
+void ATankPlayerController::SetPawn(APawn* InPawn)
+{
+	Super::SetPawn(InPawn);
+	if (InPawn)
+	{
+		auto PossessedTank = Cast<ATank>(InPawn);
+		if (!ensure(PossessedTank)) { return; }
+
+		//TODO subsribe our local method to tank's death event
+		PossessedTank->OnDeath.AddUniqueDynamic(this, &ATankPlayerController::OnPossessedTankDeath);
+	}
+
+}
+
 
 // Called every frame
 void ATankPlayerController::Tick(float DeltaTime)

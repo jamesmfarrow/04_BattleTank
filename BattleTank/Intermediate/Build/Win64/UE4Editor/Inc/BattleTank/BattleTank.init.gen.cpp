@@ -13,6 +13,7 @@ PRAGMA_DISABLE_OPTIMIZATION
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBattleTank_init() {}
+	BATTLETANK_API UFunction* Z_Construct_UDelegateFunction_BattleTank_TankDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_BattleTank()
 	{
 		static UPackage* ReturnPackage = nullptr;
@@ -21,12 +22,13 @@ void EmptyLinkFunctionForGeneratedCodeBattleTank_init() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/BattleTank")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x0BDBC335;
-			Guid.B = 0xD1B72A42;
+			Guid.A = 0x16347FE5;
+			Guid.B = 0x1460067F;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
 
+			Z_Construct_UDelegateFunction_BattleTank_TankDelegate__DelegateSignature();
 		}
 		return ReturnPackage;
 	}
