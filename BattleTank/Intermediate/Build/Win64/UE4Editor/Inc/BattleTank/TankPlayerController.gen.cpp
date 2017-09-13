@@ -63,7 +63,7 @@ void EmptyLinkFunctionForGeneratedCodeTankPlayerController() {}
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnPossessedTankDeath"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x00040401, 65535);
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnPossessedTankDeath"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x00080401, 65535);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -97,7 +97,7 @@ void EmptyLinkFunctionForGeneratedCodeTankPlayerController() {}
 				UProperty* NewProp_CrossHairYLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairYLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairYLocation, ATankPlayerController), 0x0040000000010001);
 				UProperty* NewProp_CrossHairXLocation = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("CrossHairXLocation"), RF_Public|RF_Transient|RF_MarkAsNative) UFloatProperty(CPP_PROPERTY_BASE(CrossHairXLocation, ATankPlayerController), 0x0040000000010001);
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ATankPlayerController_FoundAimingComponent(), "FoundAimingComponent"); // 66642015
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ATankPlayerController_OnPossessedTankDeath(), "OnPossessedTankDeath"); // 501487306
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ATankPlayerController_OnPossessedTankDeath(), "OnPossessedTankDeath"); // 750533135
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				static TCppClassTypeInfo<TCppClassTypeTraits<ATankPlayerController> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -121,7 +121,7 @@ void EmptyLinkFunctionForGeneratedCodeTankPlayerController() {}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATankPlayerController, 2395263453);
+	IMPLEMENT_CLASS(ATankPlayerController, 1951086650);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATankPlayerController(Z_Construct_UClass_ATankPlayerController, &ATankPlayerController::StaticClass, TEXT("/Script/BattleTank"), TEXT("ATankPlayerController"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ATankPlayerController);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
